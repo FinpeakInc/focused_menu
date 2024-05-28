@@ -73,7 +73,7 @@ class FocusedMenuDetails extends StatelessWidget {
                       sigmaX: blurSize ?? 4, sigmaY: blurSize ?? 4),
                   child: Container(
                     color:
-                        (blurBackgroundColor ?? Colors.black).withOpacity(0.7),
+                        blurBackgroundColor ?? (Colors.black.withOpacity(0.7)),
                   ),
                 )),
             Positioned(
