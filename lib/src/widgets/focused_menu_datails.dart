@@ -108,9 +108,7 @@ class FocusedMenuDetails extends StatelessWidget {
                     child: ListView.builder(
                       itemCount: menuItems.length,
                       padding: EdgeInsets.zero,
-                      physics: enableMenuScroll
-                          ? BouncingScrollPhysics()
-                          : NeverScrollableScrollPhysics(),
+                      physics: NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
                         FocusedMenuItem item = menuItems[index];
                         Widget listItem = GestureDetector(
