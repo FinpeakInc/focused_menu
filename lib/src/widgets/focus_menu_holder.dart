@@ -36,6 +36,7 @@ class FocusedMenuHolder extends StatefulWidget {
   final Color? blurBackgroundColor;
   final double? bottomOffsetHeight;
   final double? menuOffset;
+  final double? menuBorderRadius;
 
   /// Actions to be shown in the toolbar.
   final List<Widget>? toolbarActions;
@@ -69,6 +70,7 @@ class FocusedMenuHolder extends StatefulWidget {
     this.controller,
     this.onOpened,
     this.onClosed,
+    this.menuBorderRadius,
   }) : super(key: key);
 
   @override
@@ -142,6 +144,7 @@ class _FocusedMenuHolderState extends State<FocusedMenuHolder> {
               menuOffset: widget.menuOffset ?? 0,
               toolbarActions: widget.toolbarActions,
               enableMenuScroll: widget.enableMenuScroll,
+              menuBorderRadius: widget.menuBorderRadius,
             ),
           );
         },
