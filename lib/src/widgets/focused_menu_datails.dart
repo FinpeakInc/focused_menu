@@ -17,6 +17,7 @@ class FocusedMenuDetails extends StatelessWidget {
   final Color? blurBackgroundColor;
   final double? bottomOffsetHeight;
   final double? menuOffset;
+  final double? menuBorderRadius;
 
   /// Actions to be shown in the toolbar.
   final List<Widget>? toolbarActions;
@@ -39,6 +40,7 @@ class FocusedMenuDetails extends StatelessWidget {
       required this.enableMenuScroll,
       this.bottomOffsetHeight,
       this.menuOffset,
+      this.menuBorderRadius,
       this.toolbarActions})
       : super(key: key);
 
@@ -95,8 +97,8 @@ class FocusedMenuDetails extends StatelessWidget {
                   decoration: menuBoxDecoration ??
                       BoxDecoration(
                           color: Colors.grey.shade200,
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(5.0)),
+                          borderRadius: BorderRadius.all(
+                              Radius.circular(menuBorderRadius ?? 5.0)),
                           boxShadow: [
                             const BoxShadow(
                                 color: Colors.black38,
@@ -104,7 +106,8 @@ class FocusedMenuDetails extends StatelessWidget {
                                 spreadRadius: 1)
                           ]),
                   child: ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+                    borderRadius: BorderRadius.all(
+                        Radius.circular(menuBorderRadius ?? 5.0)),
                     child: ListView.builder(
                       itemCount: menuItems.length,
                       padding: EdgeInsets.zero,
